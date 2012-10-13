@@ -67,11 +67,6 @@ d3.tsv("data.tsv", function(error, data) {
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain(d3.extent(data, function(d) { return d.close; }));
 
-  svg.append("path")
-      .datum(data)
-      .attr("class", "line")
-      .attr("d", line);
-
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
@@ -80,6 +75,11 @@ d3.tsv("data.tsv", function(error, data) {
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis);
+
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line")
+      .attr("d", line);
 });
 
 </script>
