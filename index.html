@@ -63,7 +63,7 @@
 
     var defs = svg.append('svg:defs');
 
-    d3.tsv("data.tsv", function(error, data) {
+    d3.csv("data.csv", function(error, data) {
       data.forEach(function(d) {
         d.date = parseDate(d.date);
         d.close = +d.close;
